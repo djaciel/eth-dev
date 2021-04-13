@@ -32,4 +32,10 @@ contract WorkingWithVariables {
     function getBalanceOfAddress() public view returns(uint) {
         return myAddress.balance;
     }
+
+    string public myString;
+
+    function setMyString(string memory _myString) public {
+        myString = _myString;
+    }
 }
