@@ -35,7 +35,7 @@ contract FunctionsExample {
         _to.transfer(_amount);
     }
     
-    fallback () external payable {
+    receive () external payable {
         receiveMoney();
     }
 }
