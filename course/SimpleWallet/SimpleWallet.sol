@@ -3,9 +3,13 @@ pragma solidity ^0.8.3;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 
 contract Allowance is Ownable {
+    
+    event AllowanceChanged(address who, address fromWhom, uint oldAmount, uint newAmount);
+    
     mapping(address => uint) public allowance;
     
     function addAllowance(address who, uint amount) public onlyOwner {
+        emit AllowanceChanged(who, msg.sender, allowance[who], amount);
         allowance[who] = amount;
     }
     
@@ -19,6 +23,7 @@ contract Allowance is Ownable {
     }
     
     function reduceAllowance(address who, uint amount) internal {
+        emit AllowanceChanged(who, msg.sender, allowance[who], allowance[who] - amount);
         allowance[who] -= amount;
     }
 }
