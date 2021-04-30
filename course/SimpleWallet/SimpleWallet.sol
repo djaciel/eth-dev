@@ -26,6 +26,10 @@ contract Allowance is Ownable {
         emit AllowanceChanged(who, msg.sender, allowance[who], allowance[who] - amount);
         allowance[who] -= amount;
     }
+    
+    function renounceOwnership() public override onlyOwner {
+        revert("can't renounceOwnership here"); //not possible with this smart contract
+    }
 }
 
 contract SimpleWallet is Allowance {
