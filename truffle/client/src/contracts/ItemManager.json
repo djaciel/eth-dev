@@ -77,7 +77,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -90,7 +91,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -141,7 +143,8 @@
       "name": "triggerPayment",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -11932,9 +11935,62 @@
     "name": "solc",
     "version": "0.8.4+commit.c7e474f2.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0xa4035636e99f06b7651a604c1019fa4e8779fe68ef27eeb74dff2de348f6199b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_itemIndex",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_step",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_itemAddress",
+              "type": "address"
+            }
+          ],
+          "name": "SupplyChainStep",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xD5dc791623680979C741bdb70D19Ab4FcC1C883b",
+      "transactionHash": "0xa342b2df28407e3392147c45a66e3059fbf66bc90d09a99fe3941767fde84524"
+    }
+  },
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-05-04T03:45:44.793Z",
+  "updatedAt": "2021-05-05T02:24:52.222Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
